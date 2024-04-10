@@ -14,25 +14,18 @@
   <main class = "diplome">
     <nav></nav>
     <articol>
+      
         <div class="container">
-            <form action="action_page.php">
+          <form action="https://api.web3forms.com/submit" method="post">
+            <input type="hidden" name="access_key" value="b7e3de98-c2f2-400e-8f60-1451daa5f6c5">
+
+            <input type="name" id="name" name="name" placeholder="Prenumele dvs." required>
+            <input type="name" id="name" name="name" placeholder="Numele dvs." required>
+            <input type="email" id="email" name="email" placeholder="Emailul dvs." required>
+            
+            <textarea id="mesaj" name="mesaj" placeholder="Mesaj" style="height:40vh" required></textarea>
           
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          
-              <label for="country">Country</label>
-              <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-              </select>
-          
-              <label for="subject">Subject</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-          
+
               <input type="submit" value="Submit">
           
             </form>
