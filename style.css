@@ -171,7 +171,7 @@ input[type=name], select, textarea {
 }
 
 
-input[type=email], select, textarea {
+input[type=email],[type=textarea] select, textarea {
   background-color:#DDDD;
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
@@ -192,6 +192,8 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+
+
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #45a049;
