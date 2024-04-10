@@ -7,7 +7,7 @@ body{
   margin: 0px;
 }
 
-.topnav {
+.topnav { 
   position:fixed;
   width: 100%;
   background-color: #38383B;
@@ -21,6 +21,16 @@ body{
   text-decoration: none;
   font-size: 17px;
 }
+.topnav a.active:hover{
+  animation-name:culoare_nume;
+  animation-duration: 300ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes culoare_nume{
+  from {background-color: rgb(11, 96, 39);}
+  to {background-color:rgb(12, 169, 30);}
+}
 
 .topnav a.normal{
   float:right;
@@ -29,6 +39,16 @@ body{
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+}
+.topnav a.normal:hover{
+  animation-name:culoare_navigatie;
+  animation-duration: 300ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes culoare_navigatie{
+  from {background-color: rgb(110, 118, 113);}
+  to {background-color:rgb(244, 248, 245);}
 }
 
 .botnav {
