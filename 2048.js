@@ -194,11 +194,17 @@ function slideDown(){
 }
 
 function updateTile(tile, num){
-    tile.innerText = num.toString();
+    if(num != 0){
+        tile.innerText = num.toString();
+    }
+    else {
+        tile.innerText = "";
+    }
     tile.classList.value = ""; //clear the classList
     tile.classList.add("tile");
-    tile.classList.add("x" + (num));
-    
+    if(num != 0){
+        tile.classList.add("x" + (num));
+    }
 }
 
 function hasEmptyTile(){
