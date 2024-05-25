@@ -118,7 +118,7 @@ descrieri{
       margin: 0px;
       padding-bottom: 5%;
   }
-main {
+.main {
   padding-top: 10vh;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
@@ -126,8 +126,8 @@ main {
   grid-template-areas: "? ? ?" */
 }
 
-main > .nav, 
-main > .aside {
+.main > .nav, 
+.main > .aside {
   background: #38383B;
 }
 
