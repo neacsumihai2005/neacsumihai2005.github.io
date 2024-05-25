@@ -3,14 +3,32 @@ var tableDiv;
 var score = 0;
 //var rows = prompt("insert rows");
 //var columns = prompt("insert columns");
-var rows = 5;
-var columns = 5;
+var tileHeight;
+var tileWidth;
+var rows;
+var columns;
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    //console.log("mobile device");
+    rows = 4;
+    columns = 4;
+    tileHeight = 50;
+    tileWidth = 50;
+  }else{
+    // false for not mobile device
+    //console.log("not mobile device");
+    rows = 5;
+    columns = 5;
+    tileHeight = 100;
+    tileWidth = 100;
+  }
 
 window.onload = function(){
     tableDiv = document.createElement("div");
     tableDiv.id = "board";
-    tableDiv.style.height = (rows * 100) + "px";
-    tableDiv.style.width = (columns * 100) + "px";
+    tableDiv.style.height = (rows * (tileHeight + 10)) + "px";
+    tableDiv.style.width = (columns * (tileWidth + 10)) + "px";
 
     document.getElementsByClassName("articol2048")[0].appendChild(tableDiv);
     setGame();
@@ -25,10 +43,13 @@ function setGame(){
         }
     }
 
+    
     for(let i = 0; i < rows; i++){
         for(let j = 0; j < columns; j++){
             let tile = document.createElement("div");
             tile.id = i.toString() + "-" + j.toString();
+            tile.style.height = tileHeight + "px";
+            tile.style.width = tileWidth + "px";
             //tile.style.height = ( Math.floor(parseInt(tableDiv.style.height) / columns) ) + "px";
             //console.log( tile.style.height );
             //tile.style.width = ( Math.floor( parseInt(tableDiv.style.width) / rows) ) + "px";
@@ -59,8 +80,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (Math.abs(diffX) > threshold) {
                 if (diffX > 0) {
                     slideRight();
+                    setTwo();
+                    setTwo();
                 } else {
                     slideLeft();
+                    setTwo();
+                    setTwo();
                 }
             }
         } else {
@@ -68,8 +93,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (Math.abs(diffY) > threshold) {
                 if (diffY > 0) {
                     slideDown();
+                    setTwo();
+                    setTwo();
                 } else {
                     slideUp();
+                    setTwo();
+                    setTwo();
                 }
             }
         }
@@ -194,11 +223,17 @@ function slideDown(){
 }
 
 function updateTile(tile, num){
-    tile.innerText = num.toString();
+    if(num != 0){
+        tile.innerText = num.toString();
+    }
+    else {
+        tile.innerText = "";
+    }
     tile.classList.value = ""; //clear the classList
     tile.classList.add("tile");
-    tile.classList.add("x" + (num));
-    
+    if(num != 0){
+        tile.classList.add("x" + (num));
+    }
 }
 
 function hasEmptyTile(){

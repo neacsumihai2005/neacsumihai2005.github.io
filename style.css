@@ -239,8 +239,6 @@ input[type=submit]:hover {
 
 
 .tile{
-  width: 90px;
-  height: 90px;
   border: 5px solid #bbada0;
   padding: 0;
   margin: 0;
