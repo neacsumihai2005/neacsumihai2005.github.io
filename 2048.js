@@ -254,8 +254,8 @@ function setTwo(){
 
         var overScreen = document.createElement("div");
         overScreen.id = "game-over";
-        overScreen.style.height = (rows * 100) + "px";
-        overScreen.style.width = (columns * 100) + "px";
+        overScreen.style.height = (rows * tileHeight) + "px";
+        overScreen.style.width = (columns * tileWidth) + "px";
         overScreen.innerHTML = "Game over!";
 
         document.getElementsByClassName("articol2048")[0].appendChild(overScreen);
